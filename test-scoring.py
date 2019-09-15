@@ -45,12 +45,12 @@ class NegativeBowlingTests(unittest.TestCase):
         self.assertRaises(ExcessFramesException, CompletedScoreCard,
                           ScoreCard([]), results)
 
-    def test_wrong_result(self):
+    def test_bad_result(self):
         results = ['XX', '23', '6/', '7/']
         self.assertRaises(IllegalResultException, CompletedScoreCard,
                           ScoreCard([]), results)
 
-    def test_wrong_result(self):
+    def test_incomplete_result(self):
     	results = ['X', '7/', '72', '9/', 'X', 'X', 'X', '23', '6/', 'XX']
         self.assertRaises(IllegalResultException, CompletedScoreCard,
                           ScoreCard([]), results)
